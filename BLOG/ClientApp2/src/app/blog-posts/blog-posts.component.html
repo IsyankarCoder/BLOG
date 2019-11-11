@@ -1,1 +1,28 @@
-<p>blog-posts works!</p>
+<h1>Blog posts</h1>
+<p *ngIf="!(blogPosts$|async)">
+  <em>Loading....</em>
+</p>
+<p>
+  <a [routerLink]="['/add']" class="btn btn-primary float-right mb-3">New Post</a>
+</p>
+<table class="table table-sm table-hover" *ngIf="(blogPosts$|async)?.length>0">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Creator</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let blogPost of (blogPosts$|async)">
+      <td>{{blogPost.postId}}</td>
+      <td></td>
+      <td>{{blogPost.creator}}</td>      
+      <td>{{blogPost.dt| date:"dd.MM.y"}}</td>
+    </tr>
+  </tbody>
+
+</table>
