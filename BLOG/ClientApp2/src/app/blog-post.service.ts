@@ -20,7 +20,7 @@ export class BlogPostService {
   };
   constructor(private http:HttpClient) {
      this.myAppUrl=environment.appUrl;
-     this.myApiUrl='api/BlogPosts/';
+     this.myApiUrl='api/BlogPost/';
   }
  
  getBlogPosts():Observable<BlogPost[]>
