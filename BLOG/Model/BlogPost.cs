@@ -22,6 +22,7 @@ namespace BLOG.Model
 
         [Required]
         public DateTime Dt { get; set; }
+        //vvcvxc
 
     }
 }
